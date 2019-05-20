@@ -1,9 +1,15 @@
 <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+<style>
+.done{
+  text-decoration: none !important;
+  color: black !important;
+}
+</style>
 <li class="completed">
   <div class="view">
-    <input class="toggle" type="checkbox" checked>
-    <label>Save the world</label>
-    <button class="destroy"></button>
+    <input class="toggle" type="checkbox" [checked]="todo.completed" #completed="ngModel" [(ngModel)]="todo.completed" name="completed">
+    <label [ngClass]="{'done': !todo.completed}">{{todo.task}}</label>
+    <button class="destroy" (click)="eliminar(index)"></button>
   </div>
   <input class="edit" value="Salvar el mundo">
 </li>

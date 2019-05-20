@@ -1,6 +1,6 @@
 <header class="header">
     <h1>TODO</h1>
-    <input  class="new-todo" 
+    <input (keyup.enter)="saveTask()"  class="new-todo" 
             placeholder="Enter the task" 
-            autofocus>
+            autofocus #task="ngModel" [(ngModel)]="todo.task" name="task">
   </header>

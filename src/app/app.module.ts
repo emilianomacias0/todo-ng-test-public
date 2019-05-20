@@ -10,6 +10,10 @@ import { TodoFooterComponent } from './todo/todo-footer/todo-footer.component';
 import { TodoItemComponent } from './todo/todo-item/todo-item.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodosListComponent } from './todo/todos-list/todos-list.component';
+import { FormsModule }   from '@angular/forms';
+import {TodosService} from '../app/services/todo.service';
+
+
 
 @NgModule({
   declarations: [
@@ -24,9 +28,10 @@ import { TodosListComponent } from './todo/todos-list/todos-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [TodosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
